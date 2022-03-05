@@ -22,5 +22,3 @@ function comprobarDato() {
     resu = "El número introducido es: " + dato;
     return resu;
 }
-
-document.getElementById('ejer1').innerHTML = comprobarDato();
