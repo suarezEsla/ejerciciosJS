@@ -1,7 +1,24 @@
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+/* 
+.container {
+    margin: 0 450px;
+    border: 1px solid #ccc;
+} */
+
+@media only screen and(max-width: 600px) {
+    .hero-info {
+        width: 500px;
+    }
+    .hero-image {
+        visibility: hidden;
+        height: 0px;
+    }
 }
 
 .nav {
@@ -17,6 +34,25 @@ body {
     list-style-type: none;
     /* background-color: #e0e0e0; */
     /* background-color: #eee4e4; */
+    /* background-color: #f1e5e3; */
+}
+
+.styled-break-nav {
+    display: flex;
+    align-items: flex-end;
+    width: 30px;
+    height: 5px;
+    background-color: #F3617E;
+    border-radius: 2.5px;
+    margin: 30px 30px;
+}
+
+#pink {
+    color: #F3617E;
+}
+
+#violet {
+    color: #a17df4;
 }
 
 li {
@@ -30,12 +66,12 @@ li {
 
 section {
     width: 100%;
-    /*  background-color: #eee4e4; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 40px 0 0 0;
+    /* background-color: #f1e5e3; */
 }
 
 .about-me {
@@ -55,6 +91,7 @@ section {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #fff !important;
 }
 
 #main {
@@ -109,7 +146,8 @@ section {
     border: 0;
     padding: 10px 20px;
     font-size: 20px;
-    background-color: #F37465;
+    /* background-color: #F37465; */
+    background-color: #F66691;
     width: 80px;
     border-radius: 20px;
     color: #fff;
@@ -119,7 +157,7 @@ section {
 }
 
 .button:hover {
-    background-color: #f7998f;
+    background-color: #f75384;
 }
 
 .button:active {
@@ -146,6 +184,21 @@ footer {
     display: flex;
     justify-content: center;
     /* background-color: #eee4e4; */
+    /* background-color: #f1e5e3; */
+}
+
+.bg-gradient {
+    background: linear-gradient(0, #f7f3ff 0%, #fff 100%);
+    background-image: linear-gradient(0deg, rgb(247, 243, 255) 0%, rgb(255, 255, 255) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
 .fa-solid {

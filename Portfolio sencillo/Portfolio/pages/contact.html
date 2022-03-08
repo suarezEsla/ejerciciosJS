@@ -6,49 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Intro/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@100&family=The+Nautigal&family=Zen+Antique&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cfa4e0c1e5.js" crossorigin="anonymous"></script>
     <title>Contact me</title>
 </head>
 
 <body>
-    <section>
-        <form action="">
-            <h2>Contact me</h2>
-            <div class="input-section">
-                <div class="input-group">
-                    <label for="first-name">First name</label>
-                    <input type="text" name="first-name" id="first-name" value="John">
+    <div class="bg-gradient">
+        <nav>
+            <!-- <img class="logo" src="../images/code logo.png" alt="logo"> -->
+            <ul class="nav-bar">
+                <img class="logo" src="../images/code logo.png" alt="logo">
+                <li><a id="violet" href="../Intro/index.html">Index</a></li>
+                <li><a id="pink" href="https://github.com/suarezEsla">GitHub</a></li>
+                <div class="styled-break-nav"></div>
+            </ul>
+
+        </nav>
+
+
+        <section>
+            <form action="">
+                <h2>Contact me</h2>
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name" value="John">
+                    </div>
+                    <div class="input-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" value="Doe">
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="last-name">Last name</label>
-                    <input type="text" name="last-name" id="last-name" value="Doe">
+
+                <div class="input-section">
+                    <input type="radio" name="office" id="remote" value="office">
+                    <label for="remote">Office</label>
+
+                    <input type="radio" name="remote" id="remote" value="remote">
+                    <label for="office">Remote</label>
+
+                    <input type="radio" name="other" id="other" value="other">
+                    <label for="other">Other</label>
                 </div>
-            </div>
 
-            <div class="input-section">
-                <input type="radio" name="office" id="remote" value="office">
-                <label for="remote">Office</label>
+                <div class="input-section">
+                    <input type="checkbox" name="contract" id="contract" value="contract">
+                    <label for="contract">Contract work</label>
 
-                <input type="radio" name="remote" id="remote" value="remote">
-                <label for="office">Remote</label>
+                    <input type="checkbox" name="full-time" id="full-time" value="full-time">
+                    <label for="full-time">Full time</label>
 
-                <input type="radio" name="other" id="other" value="other">
-                <label for="other">Other</label>
-            </div>
+                    <input type="checkbox" name="sponsorhip" id="sponsorhip" value="sponsorhip">
+                    <label for="sponsorhip">Sponsorship</label>
+                </div>
+                <input class="button" type="submit" value="Submit">
 
-            <div class="input-section">
-                <input type="checkbox" name="contract" id="contract" value="contract">
-                <label for="contract">Contract work</label>
-
-                <input type="checkbox" name="full-time" id="full-time" value="full-time">
-                <label for="full-time">Full time</label>
-
-                <input type="checkbox" name="sponsorhip" id="sponsorhip" value="sponsorhip">
-                <label for="sponsorhip">Sponsorship</label>
-            </div>
-            <input class="button" type="submit" value="Submit">
-
-        </form>
-    </section>
+            </form>
+        </section>
+    </div>
 </body>
 
 </html>
