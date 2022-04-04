@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #f76691;
+}
+
+.datosTabla {
+    background-color: whitesmoke;
+    border: 7px solid black;
+    margin: 150px;
+    padding: 85px;
+}
