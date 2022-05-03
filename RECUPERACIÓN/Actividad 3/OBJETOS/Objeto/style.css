@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(168, 239, 221);
+    display: flex;
+    justify-content: center;
+}
+
+.formulario,
+.ordena {
+    color: rgb(30, 26, 26);
+    font-size: 35px;
+    border: 7px solid rgb(183, 77, 241);
+    margin: 150px;
+    padding: 75px;
+    background-color: azure;
+    font-family: 'Roboto Mono', monospace;
+}

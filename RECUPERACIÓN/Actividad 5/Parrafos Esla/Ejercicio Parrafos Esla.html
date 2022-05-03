@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="principal">
+        <p>Soy el primer párrafo</p>
+        <p id="intermedio"></p>
+        <p>soy el segundo párrafo</p>
+        <p>Soy el tercer párrafo</p>
+        <p id="nuevoParrafo"></p>
+
+        <p id="insercion"></p>
+        <input type="button" value="Modificar" id="boton">
+    </div>
+    <br><br><br>
+
+
+
+    <script>
+        var btn = document.querySelector('#boton')
+        var contador = 0
+
+        btn.addEventListener('click', () => {
+
+            contador++
+
+            switch (contador) {
+
+                case 1:
+                    console.log(contador)
+                    const nuevoP = document.getElementById('nuevoParrafo')
+
+                    const newP = document.createElement('p')
+                    newP.innerText = '1. Soy el nuevo párrafo'
+                    newP.style.backgroundColor = 'rgb(255,522,0)'
+                    nuevoP.appendChild(newP)
+
+                    break
+
+                case 2:
+                    const pIntermedio = document.getElementById('intermedio')
+
+                    var newOtro = document.createElement('p')
+                    newOtro.innerText = '2. Soy el párrafo intermedio'
+                    newOtro.style.backgroundColor = 'rgb(96, 118, 242)'
+                    pIntermedio.appendChild(newOtro)
+                    break
+
+                case 3:
+                    /* var main = document.getElementsByTagName('div')[1]
+                    const reemplazar = document.createElement('p')
+                    reemplazar.innerText = 'Soy el párrafo suplente, el que reemplaza al párrafo etiquetado como segundo' */
+
+
+                    segundoParrafo = document.getElementsByTagName('p')[2];
+                    reemplazar = document.createElement('p');
+                    reemplazar.style.backgroundColor = 'rgb(155, 232, 2)'
+                    reemplazar.textContent = '3. Soy el párrafo suplente, el que reemplaza al párrafo etiquetado como segundo';
+
+                    segundoParrafo.parentNode.replaceChild(reemplazar, segundoParrafo);
+                    break
+
+                case 4:
+                const insertarOtros = document.getElementById('insercion')
+
+//ELiminar el último párrafo
+                    tercerParrafo = document.getElementsByTagName('p')[4]
+
+                    tercerParrafo.remove()
+
+                    final = document.createElement('h2')
+                    final.textContent = "4. Se ha eliminado el último párrafo y el programa finaliza."
+                    final.style.color = '#f76691'
+
+                    insertarOtros.appendChild(final)
+   
+//Crear botón para volver al inicio
+                    var volver = document.createElement("BUTTON");
+                    volver.className = 'botonVolver'
+
+                    var textoVolver = document.createTextNode("Volver al inicio");
+                    volver.appendChild(textoVolver);
+                    insertarOtros.appendChild(volver);
+
+
+
+
+//Una vez hecho todo, me elimina el botón Modificar
+                    btn.remove()
+                    
+//LLamada a función terminar con el botón de volver para recargar de nuevo la página
+                    volver.addEventListener('click', terminar)
+
+                    break
+
+                default:
+                    exit()
+            }
+//Función para terminar la ejecución
+            function terminar() {
+                alert('Adiós')
+                location.reload()
+            }
+
+        })
+
+
+
+
+
+
+
+
+
+
+        /* function crearDos() {
+         const otroP = document.getElementById('otro')
+
+         const newOtro = document.createElement('p')
+         newOtro.innerText = '2. Soy el otro párrafo'
+         newOtro.style.backgroundColor = 'rgb(255,522,0)'
+         otroP.appendChild(newOtro)
+         } */
+    </script>
+</body>
+
+</html>

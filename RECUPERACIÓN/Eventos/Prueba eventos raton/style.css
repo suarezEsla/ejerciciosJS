@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(182, 47, 255);
+    margin-top: 230px;
+}

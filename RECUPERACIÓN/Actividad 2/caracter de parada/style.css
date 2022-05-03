@@ -1,0 +1,12 @@
+body {
+    background-color: palegoldenrod;
+    display: flex;
+    justify-content: center;
+}
+
+.cajas {
+    background-color: palevioletred;
+    padding: 55px;
+    border: 5px solid grey;
+    margin-top: 95px;
+}

@@ -1,0 +1,34 @@
+body {
+    /* background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 0.7791491596638656) 30%, rgba(243, 240, 236, 0.116) 100%, rgb(255, 204, 255) 100%); */
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(233, 40, 242, 0.6615021008403361) 68%);
+    display: flex;
+    justify-content: center;
+}
+
+.cajas {
+    border: 5px solid rgb(82, 73, 73);
+    border-radius: 5%;
+    padding: 25px;
+    margin: 150px;
+    color: rgb(82, 73, 73);
+    font-size: 25px;
+    font-family: 'BhuTuka Expanded One', cursive;
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+input {
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#enviar:hover {
+    opacity: 1;
+}
+
+#user {
+    color: white;
+}

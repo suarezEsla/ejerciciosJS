@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Obtener JSON con AJAX</title>
+</head>
+
+<body>
+<h1>Datos para enviar a PHP</h1>
+
+<input type="text" id="nombre" placeholder="Nombre" accept="text/plain"><br><br>
+<input type="text" id="apellido" placeholder="Apellido" accept="text/plain"><br><br>
+<input type="number" id="edad" placeholder="Edad" accept="text/plain"><br><br>
+
+<div class="enviar"><h3>Enviar</h3></div>
+<hr>
+<div class="respuesta"></div>
+<script>
+	var cjanombre, cjaapellido, cjaedad, xhr;
+	var nombre, apellido, edad, datos, respuesta0;
+
+document.addEventListener("DOMContentLoaded", inicializar,false);
+function inicializar(){
+	cjanombre=document.getElementsByTagName('input')[0];
+	cjaapellido=document.getElementsByTagName('input')[1];
+	cjaedad=document.getElementsByTagName('input')[2];
+	
+	document.getElementsByTagName('h3')[0].addEventListener('click',envioPeticion,false);
+}
+function envioPeticion(){
+	creaciondatos();
+	xhr=new XMLHttpRequest();
+	xhr.addEventListener('readystatechange', gestionarRespuesta,false);
+	xhr.open('POST', 'datos.php', true);
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.send(datos);
+}
+function creaciondatos(){
+	nombre=cjanombre.value;
+	apellido=cjaapellido.value;
+	edad=cjaedad.value;
+	alert(nombre + apellido + edad);
+	datos="nombre="+ nombre + "&apellido="+ apellido + "&edad="+ edad;
+	//datos={"nombre":nombre, "apellido":apellido, "edad":edad};
+}
+function gestionarRespuesta(e){
+	if(e.target.readyState==4 && e.target.status==200){
+		alert("respondiendo");
+		respuesta0=JSON.parse(e.target.responseText);
+		//alert(respuesta0);
+		//console.log(respuesta0.nombre);
+		//console.log(JSON.stringify(e.target.responseText));
+		document.getElementsByClassName('respuesta')[0].innerHTML="Nombre: " + respuesta0.nombre + " Apellido: " + respuesta0.apellido + " Edad: " + respuesta0.edad;
+
+	}
+
+}
+</script>
+</body>
+</html>

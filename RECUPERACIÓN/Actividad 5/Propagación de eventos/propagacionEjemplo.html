@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendiendo propagación de eventos</title>
+</head>
+
+<body>
+
+    <style>
+        div {
+            position: fixed;
+            left: 0;
+            top: 0;
+            heigh: 50%;
+            width: 100%;
+            background-color: gray;
+        }
+        
+        p {
+            height: 50%;
+            margin: 0;
+            background-color: lightgray;
+        }
+    </style>
+
+    <body>
+        <div>
+            <p>
+                <button>Haz clic sobre el botón</button>
+            </p>
+        </div>
+        <script language="javascript">
+            let capa = document.querySelector("div");
+            let p = document.querySelector("p");
+            let boton = document.querySelector("button");
+
+            function porcapa() {
+                alert("click en capa");
+            }
+
+            function porparrafo() {
+                alert("click en parrafo");
+            }
+
+            function enboton() {
+                alert("click en boton");
+            }
+
+            function inicio() {
+                capa.addEventListener("click", porcapa, );
+                p.addEventListener("click", porparrafo, );
+                boton.addEventListener("click", enboton, )
+                    //2ª parte poner "true" como tercer parámetro y observar la salida.
+            }
+            document.addEventListener("DOMContentLoaded", inicio, true);
+        </script>
+    </body>
+
+</html>

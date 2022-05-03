@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Caja que sigue al ratón</title>
+</head>
+
+<body>
+    <!--Div que sigue-->
+    <div id="sigue">Hola</div>
+
+    <!--Div sobre el que se va a producir el efecto-->
+    <!--On mouseover hace que se muestre el siguerratones en bloque al pasar por encima del ovjetivo, onmouseout hace que no se muestre si se sale del objetivo, y si se mueveel raton (se muestra solo encima del objetivo con onmouseover, con onmousemove llama a la fuinción)-->
+    <div id="principal" onmouseover="sigue.display = 'block'" onmouseout="sigue.display = 'none'" onmousemove="seguir()">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate necessitatibus dicta eius nulla nobis laborum minus quaerat eaque vero numquam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, esse. Incidunt eveniet sit praesentium error qui nihil, corrupti similique impedit? </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, praesentium quia. Quae omnis dolorem quo eum perspiciatis corrupti libero? Vero.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam nam perspiciatis pariatur tenetur tempora dolorem non aliquid unde tempore distinctio!</p>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

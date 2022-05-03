@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(48, 197, 247); */
+    background: rgb(13, 1, 11);
+    background: linear-gradient(90deg, rgba(13, 1, 11, 0.639093137254902) 23%, rgba(79, 198, 207, 0.6646008745294993) 44%, rgba(199, 161, 86, 0.6166841736694677) 57%, rgba(186, 144, 96, 0.6502976190476191) 68%, rgba(223, 146, 57, 0.5970763305322129) 79%);
+    /* font-family: 'BhuTuka Expanded One', cursive; */
+    font-family: 'Zen Antique', serif;
+    color: grey;
+    font-size: 25px;
+}
+
+.cajas {
+    border: 13px solid rgb(231, 126, 179);
+    margin: 150px;
+    padding: 75px;
+    /* background-color: rgb(240, 42, 158); */
+    background-color: rgb(241, 231, 232);
+}
+
+#enviar {
+    box-shadow: inset 0px 1px 0px 0px #e5f7c0;
+    background: linear-gradient(to bottom, #a8a0f0 5%, #5d6be4 100%);
+    background-color: #83dcfc;
+    border-radius: 6px;
+    border: 1px solid #0a2328;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3548b2;
+}
+
+#enviar:hover {
+    background: linear-gradient(to bottom, #090845 5%, #b583fc 100%);
+    background-color: #7e6dfd;
+}
+
+#enviar:active {
+    position: relative;
+    top: 1px;
+}

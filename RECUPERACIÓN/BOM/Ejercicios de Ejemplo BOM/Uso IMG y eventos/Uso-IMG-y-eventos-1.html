@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso IMG y eventos 1</title>
+</head>
+<body>
+    <center> 
+        <table>
+            <tr><td><IMG SRC="on.jpg" NAME="img1" ALT="Departamentos" style="height: 160;width: 130;" onMouseover="imagenOff('img1')"></td><td><IMG SRC="off.jpg" NAME="img2" ALT="Equipo Directivo" style="height: 160;width: 130;" onMouseover="imagenOff('img2')"></td></tr>
+            <tr><td>Mueve <A HREF="departamento.html"  onMouseout="imagenOn('img1')">sobre-esto</A></td><td>Ahora <A HREF="Equipo.html"  onMouseout="imagenOn('img2')" >sobre-aqui</A></td></tr>
+        </table>
+    </center>
+    <script>
+        //comprobar si el navegador entiende objetos imagen
+        if (document.images) { 
+            img1on=new Image();
+            img1on.src="f-arriba.jpg";
+            img2on=new Image();
+            img2on.src="f-izda.jpg";
+            img1off=new Image();
+            img1off.src="f-abajo.jpg";
+            img2off=new Image();
+            img2off.src="f-dcha.jpg";
+        }
+        function imagenOn(NombreImagen) { 
+	        if (document.images) { 
+		        document[NombreImagen].src=eval(NombreImagen + "on.src");
+	        }
+        } 
+
+        function imagenOff(NombreImagen) { 
+	        if (document.images) { 
+		        document[NombreImagen].src=eval(NombreImagen + "off.src"); 
+
+	        }
+        }
+        //Estas dos funciones se pueden simplificar en una de la siguiente forma:
+        /*function CambiarImagen(NombreImagen, NuevaImagen) { 
+		    if (document.images) { 
+			    document[NombreImagen].src=eval(NuevaImagen + ".src"); 
+		    }
+	    }
+        La llamada sería: CambiarImagen('img1','img1on'), donde img1 es el nombre de imagen del objeto
+        e img1on es una de las variables imagen
+        creadas a las que luego se les asigna el archivo de imagen.*/
+
+ 
+
+    </script>
+</body>
+</html>

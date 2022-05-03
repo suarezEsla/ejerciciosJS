@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manipulando el DOM</title>
+</head>
+
+<body>
+    <main id="principal">
+        <p>Soy el primer párrafo</p>
+        <p>soy el segundo párrafo</p>
+        <p>Soy el tercer párrafo</p>
+    </main>
+    <br><br><br>
+    <input type="button" value="Modificar" id="boton">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', inicio, false);
+        var modificar = document.getElementById('boton');
+        var main = document.getElementById('principal');
+        var parrafoprimero;
+        var parrafosegundo;
+        var parrafotercero;
+        var parrafonuevo;
+        var contador = 0;
+
+        function inicio() {
+            modificar.addEventListener('click', function() {
+
+                switch (contador) {
+                    case 0:
+                        parrafonuevo = document.createElement('p');
+                        parrafonuevo.textContent = 'Soy el nuevo parrafo';
+                        main.append(parrafonuevo);
+                        contador++;
+                        break;
+
+                    case 1:
+                        parrafoprimero = document.getElementsByTagName('p')[0];
+                        parrafonuevo = document.createElement('p');
+                        let parrafotexto = document.createTextNode('Soy el nuevo parrafo intermedio');
+                        //parrafonuevo.textContent='Soy el nuevo parrafo intermedio';
+                        parrafonuevo.appendChild(parrafotexto);
+                        //main.insertBefore(parrafonuevo, document.getElementsByTagName('p')[2]);
+                        main.insertBefore(parrafonuevo, main.children[1]);
+
+                        contador++;
+                        break;
+
+                    case 2:
+                        parrafosegundo = document.getElementsByTagName('p')[2];
+                        parrafonuevo = document.createElement('p');
+                        parrafonuevo.textContent = 'Soy el parrafo suplente del Segundo';
+                        parrafosegundo.parentNode.replaceChild(parrafonuevo, parrafosegundo);
+                        contador++;
+                        break;
+
+                    case 3:
+                        parrafotercero = document.getElementsByTagName('p')[3];
+                        parrafotercero.remove();
+                        contador++;
+                        break;
+                    default:
+                        alert("Proceso finalizado");
+                        location.reload();
+                        break;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

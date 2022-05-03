@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar imagen de fondo pulsando Alt+F12</title>
+    <style>
+        div {
+            background-color: black;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="imagen">
+        <h1>Pulsa <kbd>Alt + F12</kbd> para cambiar la imagen de fondo
+        </h1>
+    </div>
+
+
+    <script>
+        var fondo = document.getElementById('imagen')
+        document.addEventListener('keydown', cambiarFondo, false);
+
+
+        function cambiarFondo(event) {
+
+            if (event.altKey && event.code === 'F12') {
+
+                let h1 = document.getElementsByTagName('h1')[0]
+
+                h1.style.color = 'black'
+                h1.style.background = 'white'
+                h1.style.border = 'solid 5px black'
+                h1.style.borderRadius = '5%'
+
+                h1.innerHTML = 'Has presionado <kbd>Alt + F12</kbd> y se ha cambiado la imágen de fondo!'
+                    //Se cambia el fondo por una imágen aleatoria de Unsplash
+                fondo.style.backgroundImage = "url('https://source.unsplash.com/user/c_v_r')"
+
+            } else {
+                document.getElementsByTagName('h1')[0].innerHTML = 'ERROR. No has pulsado la combinación de teclas correcta!!'
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

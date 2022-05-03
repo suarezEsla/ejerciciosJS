@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <br><br>
+        <h1>Diferencia entre fechas, cuanto queda para que acabe el estado de alarma</h1>
+        <h2>Acabara se supone que el</h2>
+        <input type="date" value="2021-05-09" id="fecha1"><br><br><br>
+        <h2>En que dia vive usted</h2>
+        <input type="date" id="fecha2">
+        <input type="button" id="boton" value="boton">
+    </center>
+    <script>
+	var day1;
+        var day2;
+        var boton;
+
+        function comparar() {
+            var f1=new Date(day1.value);
+	    var f2=new Date(day2.value);
+	    var tiempo1=f1.getTime();
+	    alert(tiempo1);
+	    var tiempo2=f2.getTime();
+	    alert(tiempo2);
+
+            var difference = tiempo1 - tiempo2;
+            days = difference / (1000 * 3600 * 24)
+
+            alert(days)
+        }
+
+	function iniciar(){
+		if (document.readyState == "complete"){
+			alert("inicializando");
+			day1 = document.getElementById('fecha1');
+            		day2 = document.getElementById('fecha2');
+            		boton = document.getElementById('boton');
+			boton.addEventListener("click", comparar, false);
+		}	
+
+	}
+
+	document.addEventListener("readystatechange", iniciar, false);
+    </script>
+</body>
+
+</html>

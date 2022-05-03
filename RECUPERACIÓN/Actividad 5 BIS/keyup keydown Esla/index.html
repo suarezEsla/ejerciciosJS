@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidad</title>
+</head>
+
+<body>
+    <div class="principal">
+        <h1>Velocidad: <span class="num">0</span></h1>
+    </div>
+
+
+
+    <script>
+        var numero = document.getElementsByClassName('num')[0]
+
+        document.addEventListener('keydown', mover, false)
+
+        function mover(event) {
+            var contador = 0
+            switch (event.key) {
+                case 'ArrowUp':
+                    contador++
+                    console.log(event.code)
+                        // numero.innerHTML = contador
+                    break;
+
+                case 'ArrowDown':
+                    contador--
+                    console.log(event.code)
+                        //numero.innerHTML = contador
+                    break;
+
+                default:
+                    location.reload()
+            }
+            var suma = 0
+            suma = suma + contador
+            numero.innerHTML = contador
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*do {
+                            if (event.key == 'ArrowUp') {
+                                contador++
+                                console.log(event.code)
+                                numero.innerHTML = contador
+
+                            } else if (event.key == 'ArrowDown') {
+                                contador--
+                                console.log(event.code)
+                                numero.innerHTML = contador
+                            } else {
+                                console.log('Error')
+                            }
+                        } while (!event.key === 'ArrowUp' || !event.key === 'ArrowDown')*/
+    </script>
+</body>
+
+</html>

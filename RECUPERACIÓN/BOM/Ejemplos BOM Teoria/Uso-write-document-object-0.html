@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo-2-BOM</title>
+    <script>
+        function probando(){ 
+	        var cad="Objetos predefinidos"; 
+	        var nombres=new Array("Juan", "Ana", "Julio", "Maria", "Alicia");
+	        var numero=36; 
+
+	        document.write("Longitud de la cadena: "+cad.length+"<BR>");
+	        document.write(" Mayúscula: "+ cad.toUpperCase()+"<BR>");
+	        document.write("De color rojo: "+cad.fontcolor("#FF0000")+"<P>"); 
+
+	        document.write("Antes de ordenar el array: " + nombres.join(',')+"<BR>"); 
+	        document.write("Nombres ordenados: "+nombres.sort()+"<BR>");
+	        document.write("Ordenados en orden inverso: " + nombres.sort().reverse()+"<P>"); 
+
+	        document.write("Raiz cuadrada de 36:" +Math.sqrt(numero)+"<BR>");
+	        document.write("36 elevedo a 5:" + Math.pow(numero,5)+"<BR>");
+        } 
+    </script>
+</head>
+<body>
+    <script>
+        probando(); 
+    </script>
+    
+</body>
+</html>

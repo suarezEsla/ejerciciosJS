@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <title>Coches informe</title>
+</head>
+<body>
+    <h2>RECUPERANDO INFORMACIÓN</h2>
+    <button class="btn btn-lg btn-primary btn-block" id="retrieveButton">Buscar en almacén</button><br><br>
+    <div id="retrieve"></div><br>
+    <div>
+        <button class="btn btn-lg btn-danger btn-block" id="removeButton">Eliminar Almacén</button><br><br>
+        <button class="btn btn-lg btn-danger btn-block" id="clearButton">Limpiar todo</button>
+    </div>
+    <script>
+        function retrieveRecords(){ //retrieves items in sessionStorage
+           
+            if ((window.sessionStorage.getItem('cars')) && (window.sessionStorage.getItem('cars') != null)){
+                console.log("retrive records");
+                var records = JSON.parse(window.sessionStorage.getItem('cars'));
+                console.log(records);
+                var tabla=document.createElement('table');
+                for (let j of records){
+                    datojson=j;
+                    console.log(datojson['brand']);
+                    var fila=document.createElement('tr')
+                    var celda0=document.createElement('td');
+                    var texto=document.createTextNode(datojson['brand']);
+                    celda0.appendChild(texto);
+                    var celda1=document.createElement('td');
+                    texto=document.createTextNode(datojson['price']);
+                    celda1.appendChild(texto);
+                    fila.appendChild(celda0);
+                    fila.appendChild(celda1);
+                    tabla.appendChild(fila);           
+                }
+        
+                /*var paragraph = document.createElement("p");
+                var infor = document.createTextNode(records);
+                paragraph.appendChild(infor);*/
+                var element = document.getElementById("retrieve");
+                element.appendChild(tabla);
+            }else{
+                console.log("Ha ocurrido un error")
+            }
+        }
+
+        function removeItem(){//deletes item from sessionStorage
+            sessionStorage.removeItem('cars');
+            console.log("remove items");
+        }
+
+        function clearStorage(){ //clears the entire sessionStorage
+            sessionStorage.clear();
+            console.log("clear records");
+        }
+        document.addEventListener("DOMContentLoaded", inicializar,false);//ensures the page is loaded before functions are executed.
+        function inicializar(){
+            document.getElementById("removeButton").addEventListener("click",removeItem,false);
+            document.getElementById("retrieveButton").addEventListener("click",retrieveRecords,false);
+            document.getElementById("clearButton").addEventListener("clik",clearStorage,false);   
+        }
+    </script>
+</body>
+</html>
