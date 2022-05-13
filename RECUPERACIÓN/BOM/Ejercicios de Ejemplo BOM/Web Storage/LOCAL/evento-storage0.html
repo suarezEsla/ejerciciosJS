@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5</title>
+    <script>
+        var x = window.open("index.html");
+
+        function mostrar(evento) {
+            var mensaje = '<p><strong>Nombre:</strong>' + evento.key;
+            mensaje += '<strong> Valor actual:</strong>' + evento.newValue;
+            mensaje += '<strong> Valor anterior:</strong>' + evento.oldValue;
+
+            console.log("Dentro de mostrar mensaje");
+
+            if (evento.storageArea == window.localStorage) {
+                mensaje += '<strong> Almac&eacute;n:</strong>local</p>';
+            } else {
+                mensaje += '<strong> Almac&eacute;n:</strong>sesi&oacute;n</p>';
+            }
+
+            document.body.insertAdjacentHTML('beforeend', mensaje);
+        }
+
+        window.addEventListener('storage', mostrar);
+        alert("Se ha cargado documento");
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

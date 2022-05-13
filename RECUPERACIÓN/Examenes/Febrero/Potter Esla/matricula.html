@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe matrícula Potter</title>
+</head>
+
+<body>
+    <center>
+        <h2>INFORME FINAL MATRÍCULA</h2>
+        <img src="" alt=""><br><br>
+        <label for="">Nombre: </label><input type="text"><br><br>
+        <label for="">Apellidos: </label><input type="text">
+    </center>
+
+    <script>
+        function cargardatos() {
+
+            document.getElementsByTagName('img')[0].src = sessionStorage.apellidoAlumno + '.jpg';
+            document.getElementsByTagName('input')[0].value = sessionStorage.nombreAlumno;
+            document.getElementsByTagName('input')[1].value = sessionStorage.apellidoAlumno;
+        }
+        document.addEventListener("DOMContentLoaded", cargardatos, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* var nombreAlumno = document.getElementsByTagName('input')[0]
+         var apellidoAlumno = document.getElementsByTagName('input')[1]
+
+
+
+
+         let todoContenidoSession = "";
+         let keysSession = Object.keys(sessionStorage);
+
+         for (let key of keysSession) {
+
+
+             //todoContenidoSession += key + " = " + sessionStorage.getItem(key) + '<br>';
+             // nombreAlumno.value = todoContenidoSession += key
+            /* nombreAlumno.value = sessionStorage.getItem(key)
+             apellidoAlumno.value = sessionStorage.getItem(key)apellidoAlumno*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba sesión</title>
+</head>
+
+<body>
+    <div class="mensajes"></div>
+
+    <input type="text" name="nombre" id="nombre"><br>
+    <input type="text" name="apellido" id="apellido">
+
+    <input type="button" value="Almacenar" id="guardar">
+    <input type="button" id="mostrar" value="Mostrar">
+    <input type="button" value="Eliminar" id="eliminar">
+
+
+
+    <script>
+        var nombre
+        var apellido
+        var guardar
+        var mensaje
+
+        nombre = document.getElementById('nombre')
+        apellido = document.getElementById('apellido')
+        mensaje = document.getElementById('mensaje')
+
+        guardar = document.getElementById('guardar')
+        eliminar = document.getElementById('eliminar')
+        mostrar = document.getElementById('mostrar')
+
+
+
+        guardar.addEventListener('click', sesion)
+        eliminar.addEventListener('click', borrar)
+        mostrar.addEventListener('click', mostrarDatosSesion)
+
+
+        function sesion() {
+
+            let nombreCaptura = nombre.value
+            let apellidoCaptura = apellido.value
+
+            sessionStorage.setItem(nombreCaptura, apellidoCaptura);
+
+
+            mostrarDatosSesion()
+
+        }
+
+        function mostrarDatosSesion() {
+            let nombreCaptura = nombre.value
+            let apellidoCaptura = apellido.value
+
+
+
+            let personName = sessionStorage.getItem(nombreCaptura);
+            let personSurname = sessionStorage.getItem(apellidoCaptura)
+
+            let todoContenidoSession = "";
+            let keysSession = Object.keys(sessionStorage);
+
+            for (let key of keysSession) {
+
+                todoContenidoSession += key + " = " + sessionStorage.getItem(key) + '<br>';
+            }
+            document.querySelector(".mensajes").innerHTML = 'Valores en sesión: <br>' +
+                todoContenidoSession;
+        }
+
+        function borrar() {
+            let nombreCaptura = nombre.value
+            let apellidoCaptura = apellido.value
+
+
+            if (nombreCaptura != "") {
+                if (sessionStorage.getItem(nombreCaptura) !== undefined && sessionStorage.getItem(nombreCaptura)) {
+                    //Elimina
+                    sessionStorage.removeItem(nombreCaptura);
+                    document.querySelector(".mensajes").innerHTML = 'Valor eliminado correctamente'
+
+
+                    //limpiar();
+                } else {
+                    document.querySelector(".mensajes").innerHTML = 'El valor no está almacenado en session'
+
+                    // limpiar();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

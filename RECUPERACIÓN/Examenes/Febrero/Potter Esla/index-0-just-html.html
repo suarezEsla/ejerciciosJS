@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada</title>
+    <style type="text/css">
+        body {
+            margin-left: 30px;
+            font-family: sans-serif;
+        }
+        
+        h4 {
+            margin: 0;
+        }
+        
+        div {
+            float: left;
+        }
+        
+        .estiloForm,
+        #encuadraImagen,
+        #datos {
+            background-color: #f3f3f3;
+            border: solid 2px black;
+            margin-left: 10px;
+            width: 300px;
+        }
+        
+        .estiloForm {
+            width: 330px;
+            padding: 10px;
+        }
+        
+        #datos {
+            margin-top: 20px;
+            height: 226px;
+            padding: 10px;
+        }
+        
+        #encuadraImagen {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        
+        .estiloForm label {
+            display: block;
+            width: 120px;
+            float: left;
+            text-align: right;
+            margin-bottom: 35px;
+            padding-right: 20px;
+        }
+        
+        br {
+            clear: left;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            margin: 25px 5px 10px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COLEGIO HOGWARTS DE MAGIA Y HECHICERIA</h1>
+
+    <div class="estiloForm">
+
+        <form>
+            <img src="hogwarts.jpg" alt="" style="height: 5cm;width: 8cm;">
+
+            <h3>Bienvenid@ sr/a:</h3>
+
+            <label>Nombre</label><input name="nombre" type="text" /><br/>
+            <label>Apellido</label><input name="apellido" type="text" /><br/>
+
+            <h4>¿Desea iniciar el proceso de matriculación?</h4><br/>
+            <input type="text" name="si-no" value="" style="height: 1cm;width: 0.5cm;" />
+
+        </form>
+    </div>
+    <script src="app/index0.js"></script>
+</body>
+
+</html>
