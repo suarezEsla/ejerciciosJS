@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Objeto Ordenador</title>
+</head>
+
+<body>
+    <form>PC:
+        <input type="radio" name="tipo" id="pc" placeholder="PC"> Laptop:
+        <input type="radio" name="tipo" id="laptop" placeholder="Laptop"><br> Marca:
+        <input type="text" name="marca" id="marca" placeholder="HP"><br> Modelo:
+        <input type="text" name="modelo" id="modelo" placeholder="Pavillion"><br> RAM:
+        <input type="text" name="ram" id="ram" placeholder="32"><br> HD:
+        <input type="text" name="hd" id="hd" placeholder="255"><br> Pantalla:
+        <input type="text" name="pantalla" id="pantalla" placeholder="17"><br>
+        <div id="autonomiaDiv">
+            Autonomía:
+            <input type="text" name="autonomia" id="autonomia" placeholder="4"><br>
+        </div>
+        <input type="button" value="Enviar" id="enviar">
+
+        <div id="mostrarDatos"></div>
+    </form>
+    <script>
+        var radio, marca, modelo, ram, hd, pantalla, autonomia;
+        var marcaDefault, modeloDefault, ramDefaul, hdDefault, pantallaDefault, autonomiaDefault;
+        var esLaptop = false;
+
+        document.addEventListener('DOMContentLoaded', iniciar, false)
+
+        function iniciar() {
+            // var mostrar = document.querySelector('#mostrarDatos')
+            var autonomiaDiv = document.querySelector('#autonomiaDiv')
+
+            autonomiaDiv.hidden = true;
+
+            var boton = document.querySelector('#enviar')
+
+            //Valores por formulario
+            radioButton = document.getElementsByName("tipo");
+            marca = document.querySelector('#marca')
+            modelo = document.querySelector('#modelo')
+            ram = document.querySelector('#ram')
+            hd = document.querySelector('#hd')
+            pantalla = document.querySelector('#pantalla')
+            autonomia = document.querySelector('#autonomia')
+
+            //Valores por defecto
+            marcaDefault = document.querySelector('#marca').placeholder
+            modeloDefault = document.querySelector('#modelo').placeholder
+            ramDefaul = document.querySelector('#ram').placeholder
+            hdDefault = document.querySelector('#hd').placeholder
+            pantallaDefault = document.querySelector('#pantalla').placeholder
+            autonomiaDefault = document.querySelector('#autonomia').placeholder
+
+            boton.addEventListener('click', agregar, false)
+            document.addEventListener('click', verTipo, false)
+        }
+
+
+        function verTipo(event) {
+            //Si se ha seleccionado un elemento tipo radio
+            if (event.target.type == "radio") {
+                if (radioButton[0].checked == true) {
+                    console.log("Ha elegido pc");
+                    autonomiaDiv.hidden = true;
+                    marca.focus();
+                }
+                if (radioButton[1].checked == true) {
+                    console.log("Ha elegido laptop");
+                    autonomiaDiv.hidden = false;
+                    esLaptop = true;
+                    marca.focus();
+                }
+            }
+        }
+
+        function agregar(e) {
+            //Obtiene el value de los campos
+            let marcaGet = marca.value;
+            let modeloGet = modelo.value;
+            let ramGet = ram.value;
+            let hdGet = hd.value;
+            let pantallaGet = pantalla.value;
+            let autonomiaGet = autonomia.value;
+
+            //Si los dos primeros campos se han rellenado comprueba si es laptop o no
+
+            if (esLaptop) {
+                //si tipo es true, utilizara la llamada a la herencia del prototipo ordenador el cual seria el OrdenadorPortatil
+                console.log("es portatil");
+                if (ramGet != "" && hdGet != "" && pantallaGet != "" && autonomiaGet != "") {
+                    const portatil = new Portatil(marcaGet, modeloGet, ramGet, hdGet, pantallaGet, autonomiaGet);
+                    console.log(portatil);
+                    portatil.listado();
+                    portatil.probar();
+                } else {
+                    const portatil = new Portatil(marcaGet, modeloGet);
+                    console.log(portatil);
+                    portatil.listado();
+                    portatil.probar();
+                }
+            } else {
+                if (ramGet != "" && hdGet != "" && pantallaGet != "") {
+                    //en caso de que ningun input este vacio agregamos el ordenador con todos los datos ingresados
+                    const ordenadorMesa = new Ordenador(marcaGet, modeloGet, ramGet, hdGet, pantallaGet);
+                    console.log(ordenadorMesa);
+                    ordenadorMesa.listado();
+                    //ordenadores.push(ordenadorMesa);
+                } else {
+                    //en caso contrario agregamos el ordenador con todos los datos por defecto
+                    const ordenadorMesa = new Ordenador(marcaGet, modeloGet);
+                    console.log(ordenadorMesa);
+                    ordenadorMesa.listado();
+                }
+            }
+        }
+
+
+
+
+
+
+
+        class Ordenador {
+            constructor(marca, modelo, ram, hd, pantalla) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.ram = ram;
+                this.hd = hd;
+                this.pantalla = pantalla;
+            }
+            listado() {
+                var mostrar = document.querySelector('#mostrarDatos')
+                var ordenador = 'El PC de marca ' + this.marca + ' y modelo ' + this.modelo + ' tiene ' + this.ram + ' de RAM, pantalla de ' + this.pantalla + ' pulgadas y un hd de ' + this.hd;
+                var p = document.createElement('p');
+
+                p.textContent = ordenador;
+                mostrar.appendChild(p);
+            }
+        }
+
+
+        class Portatil extends Ordenador {
+            constructor(marca, modelo, ram, hd, pantalla, autonomia) {
+                super(marca, modelo, ram, hd, pantalla);
+                this.autonomia = autonomia;
+            }
+
+            listado() {
+                var mostrar = document.querySelector('#mostrarDatos')
+                var ordenadorPortatil = 'El PC de marca ' + this.marca + ' y modelo ' + this.modelo + ' tiene ' + this.ram + ' de RAM, pantalla de ' + this.pantalla + ' pulgadas, un hd de ' + this.hd + ' y autonomia de ' + this.autonomia + ' horas.';
+
+
+                var p = document.createElement('p');
+                p.textContent = ordenadorPortatil;
+                mostrar.appendChild(p);
+            }
+        }
+    </script>
+</body>
+
+</html>
